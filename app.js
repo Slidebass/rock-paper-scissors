@@ -11,3 +11,22 @@ function computerPlay() {
 		return 'scissors';
 	}
 }
+
+// get input from user, if input is correct return input, else loop request until input's correct
+function userPlay() {
+	let pick = prompt('Choose rock, paper or scissors').toLowerCase();
+	if (pick === 'rock' || pick === 'paper' || pick === 'scissors') {
+		return pick;
+	} else {
+		let check = 0;
+		do {
+			pick = prompt(
+				'Oops, something went wrong. Try again. Rock, paper or scissors?'
+			).toLowerCase();
+			if (pick === 'rock' || pick === 'paper' || pick === 'scissors') {
+				check = 1;
+			}
+		} while (check !== 1);
+	}
+	return pick;
+}
